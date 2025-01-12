@@ -39,3 +39,12 @@ class ProductPage(BasePage):
         assert book_title == book_title_alert, f"Book title is not the same. Expected '{book_title}', got '{book_title_alert}'"
         assert book_price == book_price_alert, f"Book price is not the same. Expected '{book_price}', got '{book_price_alert}'"
         
+    def should_not_be_success_message(self):
+        assert self.is_element_not_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+            
+    def should_element_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message did not disappear, but it should"
+    
+    
