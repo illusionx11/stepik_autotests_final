@@ -1,7 +1,11 @@
 from selenium.webdriver.common.by import By
 
-class MainPageLocators():
+class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+class MainPageLocators():
+    BASKET_LINK = (By.XPATH, "//a[text()='View basket']")
     
 class LoginPageLocators():
     REG_FORM = (By.CSS_SELECTOR, "form#register_form")
@@ -15,3 +19,8 @@ class ProductPageLocators():
     ALERT_BOOK_NAME = (By.CSS_SELECTOR, "#messages .alert:first-child strong")
     ALERT_BOOK_PRICE = (By.CSS_SELECTOR, "#messages .alert:last-child strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert:first-child .alertinner")
+    
+class BasketPageLocators():
+    BASKET_HEADING = (By.CSS_SELECTOR, ".page-header h1")
+    BASKET_CONTENT = (By.CSS_SELECTOR, "#content_inner p")
+    BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
